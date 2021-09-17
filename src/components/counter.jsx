@@ -5,6 +5,7 @@ class Counter extends React.Component {
     fontSize: "15px",
     fontWeight: "bold",
   };
+  
 
   render() {
     return (
