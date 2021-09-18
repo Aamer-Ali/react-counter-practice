@@ -3,16 +3,21 @@ import Counter from "../components/counter";
 
 class Counters extends React.Component {
   render() {
+    //object desctructuring.
+    //Instead of using this.props.(...) We just destructure and get separate properties from this.props
+    const { onReset, counters, onDelete, onIncrement, onDecrement} = this.props;
+
     return (
       <div>
-        <button onClick={this.props.onReset} className="btn btn-danger m2">
+        <button onClick={onReset} className="btn btn-danger m2">
           Reset
         </button>
-        {this.props.counters.map((counter) => (
+        {counters.map((counter) => (
           <Counter
             key={counter.id}
-            onDelete={this.props.onDelete}
-            onIncrement={this.props.onIncrement}
+            onDelete={onDelete}
+            onIncrement={onIncrement}
+            onDecrement={onDecrement}
             counter={counter}
           />
         ))}
